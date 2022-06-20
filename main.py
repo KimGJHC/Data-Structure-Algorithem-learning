@@ -1,9 +1,6 @@
-from AlienDictionary import Solution
-from heapq import *
-
+from BackTrack.nBit import grayCode2
 if __name__ == '__main__':
-    a = [1]
-    print(max(a[0], a[-1]))
+    print(grayCode2(5))
 
 
 

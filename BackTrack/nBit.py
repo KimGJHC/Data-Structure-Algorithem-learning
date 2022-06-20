@@ -1,6 +1,5 @@
 import math
 
-
 def graycode(n):
     res = [0]
     used = {0}

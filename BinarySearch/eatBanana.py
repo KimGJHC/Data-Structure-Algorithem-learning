@@ -1,4 +1,3 @@
-import math
 class Solution:
     def minEatingSpeed(self, piles, h):
         l, r = 1, max(piles)

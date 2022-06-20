@@ -1,4 +1,3 @@
-def generateParenthesis(n):
     stack = []
     res = []
 

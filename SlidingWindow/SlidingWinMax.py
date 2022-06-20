@@ -1,4 +1,3 @@
-from collections import deque
 
 def maxSlidingWindow(nums, k):
     n = len(nums)
