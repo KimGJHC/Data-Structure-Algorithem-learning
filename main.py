@@ -1,5 +1,4 @@
-from DynamicProgramming.CoinChange import Solution
+from DynamicProgramming.MaxProductSubarray import test
 
 if __name__ == '__main__':
-    solution = Solution()
-    solution.test()
+    test()
