@@ -1,4 +1,4 @@
-from DynamicProgramming.PartitionEqSubsetSum import test
+from String.fullJustify import test
 
 if __name__ == '__main__':
     test()
