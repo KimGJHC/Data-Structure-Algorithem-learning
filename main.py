@@ -1,4 +1,4 @@
-from DynamicProgramming.WordBreak import test
+from DynamicProgramming.PartitionEqSubsetSum import test
 
 if __name__ == '__main__':
     test()
