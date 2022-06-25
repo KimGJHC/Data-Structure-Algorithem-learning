@@ -1,4 +1,4 @@
-from DynamicProgramming.LongestCommonSubseq import test
+from DynamicProgramming.BestTimeToBuyandSell import test
 
 if __name__ == '__main__':
     test()
