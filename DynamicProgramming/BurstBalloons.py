@@ -28,7 +28,7 @@ def maxCoins_v1(nums):
 
 from functools import lru_cache
 
-def maxCoins(nums):
+def maxCoins_v2(nums):
     # we first create a recursive solution that is less efficient
     # we could use bitmask to store information
     # also we can use lru_cache
