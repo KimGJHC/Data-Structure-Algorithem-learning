@@ -17,6 +17,7 @@ Output: 23
 
 def MaxSubArray(nums):
     # Note that a sub array with max sum will have start and end element positive
+    # We are calculating the max sub array sum with nums[i] as the end of subarray
     res = nums[0]
     for i in range(1, len(nums)):
         if nums[i-1] > 0:
