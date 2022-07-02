@@ -1,4 +1,4 @@
-from Greedy.partitionLabels import test
+from Greedy.validParenthesisString import test
 
 if __name__ == '__main__':
     test()
