@@ -1,4 +1,4 @@
-from Greedy.validParenthesisString import test
+from Interval.insertInterval import test
 
 if __name__ == '__main__':
     test()
