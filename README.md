@@ -9,6 +9,7 @@ This repository keeps track of my progress of learning data structure and algori
 * Bit Manipulation
 * Dynamic Programming
 * Graph
+* Greedy
 * Heap
 * LinkedList
 * Sliding Window
