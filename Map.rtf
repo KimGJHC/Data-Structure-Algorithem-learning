@@ -88,6 +88,8 @@ Graph related question: \
 13. Interval\
 	- When consider the relation between 2 intervals, consider the status of left and right boundaries\
 	- To merge intervals, we want to sort intervals by ascending start and descending end\
+	- Maybe think about the question solvable by greedy algorithm\
+	- When count intersection, consider cumulative count of start and end\
 Trick in implementation:\
 - Instead of globle/nonlocal variant, we can create a variable and pass into function without explicitly return it but just write on it\
 - trick of using max(nums[n-1], nums[n-2]), if nums has length 1, this still works\
