@@ -85,11 +85,14 @@ Graph related question: \
 12. Greedy\
 	- To consider iteration piece by piece (We want to find some info which derived from previous info and enough for future decision)\
 	- Consider what to do with cases that does not fit individual requirement, what is the info we need in the future?\
+	- Consider Heap\
 13. Interval\
 	- When consider the relation between 2 intervals, consider the status of left and right boundaries\
 	- To merge intervals, we want to sort intervals by ascending start and descending end\
 	- Maybe think about the question solvable by greedy algorithm\
 	- When count intersection, consider cumulative count of start and end\
+14. Math\
+	- Rotate matrix Inplace\
 Trick in implementation:\
 - Instead of globle/nonlocal variant, we can create a variable and pass into function without explicitly return it but just write on it\
 - trick of using max(nums[n-1], nums[n-2]), if nums has length 1, this still works\
