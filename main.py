@@ -1,4 +1,4 @@
-from Math.spiralMatrix import test
+from Math.setMatrixZero import test
 
 if __name__ == '__main__':
     test()
