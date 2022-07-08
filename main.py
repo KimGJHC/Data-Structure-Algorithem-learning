@@ -1,4 +1,4 @@
-from ArrayHashing.asteroidCollision import test
+from String.reorganizeString import test
 
 if __name__ == '__main__':
     test()
