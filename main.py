@@ -1,4 +1,4 @@
-from TwoPointers.minFlip import test
+from Math.seqDigits import test
 
 if __name__ == '__main__':
     test()

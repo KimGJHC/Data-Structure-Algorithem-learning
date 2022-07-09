@@ -36,7 +36,7 @@ def minFlipsMonoIncr_v1(s):
 # time: O(n)
 # space: O(n)
 # We can reduce space by reserving only one array
-def minFlipsMonoIncr(s):
+def minFlipsMonoIncr_v2(s):
     n = len(s)
     carry = [0] * (n+1)
     left_one_count = 0
@@ -50,6 +50,22 @@ def minFlipsMonoIncr(s):
         if s[j] == '0':
             right_zero_count += 1
         res = min(res, right_zero_count + carry[j])
+    return res
+
+# space can be O(1)
+# Note that we do not care the element at boundary (it can be either '0' or '1' and still be valid)
+def minFlipsMonoIncr(s):
+    n = len(s)
+    ones = 0
+    zeros = s.count('0')
+    res = zeros
+    for i in range(n):
+        if s[i] == '1':
+            ones += 1
+        if s[i] == '0':
+            zeros -= 1
+
+        res = min(res, zeros + ones)
     return res
 
 
