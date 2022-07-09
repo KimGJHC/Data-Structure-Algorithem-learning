@@ -17,7 +17,7 @@ Input: s = "00011000"
 Output: 2
 """
 
-def minFlipsMonoIncr(s):
+def minFlipsMonoIncr_v1(s):
     # We need to preprocess the string and for each possible boundary between 0 and 1, calculate the flips needed
     n = len(s)
     left_one, right_zero = [0] * (n+1), [0] * n
@@ -35,6 +35,23 @@ def minFlipsMonoIncr(s):
 
 # time: O(n)
 # space: O(n)
+# We can reduce space by reserving only one array
+def minFlipsMonoIncr(s):
+    n = len(s)
+    carry = [0] * (n+1)
+    left_one_count = 0
+    for i in range(1, n + 1):
+        if s[i - 1] == '1':
+            left_one_count += 1
+        carry[i] = left_one_count
+    right_zero_count = 0
+    res = carry[-1]
+    for j in range(n - 1, -1, -1):
+        if s[j] == '0':
+            right_zero_count += 1
+        res = min(res, right_zero_count + carry[j])
+    return res
+
 
 def test():
     s = "00110"
