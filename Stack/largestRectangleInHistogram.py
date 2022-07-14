@@ -30,6 +30,8 @@ def largestRectangleArea(heights):
 # time: O(n)
 # space: O(n)
 
+# Devide and conquer is also dorable but the time complexity is  O(n**2) in worst case (sorted bars); On average, O(nlogn)
+
 def test():
     heights = [2, 1, 5, 6, 2, 3]
     assert largestRectangleArea(heights) == 10
