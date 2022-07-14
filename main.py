@@ -1,4 +1,4 @@
-from Stack.trapRainWater import test
+from ArrayHashing.longestCommonPrefix import test
 
 if __name__ == '__main__':
     test()
