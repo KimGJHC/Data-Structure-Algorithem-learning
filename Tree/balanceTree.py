@@ -16,7 +16,7 @@ def isBalanced(root):
         nonlocal res
         left = dfs(node.left)
         right = dfs(node.right)
-        if abs(left - right) > 1:
+        if abs(left - right) > 1: # note that we never turn res to True if it becomes False
             res = False
         return max(left, right) + 1
 
