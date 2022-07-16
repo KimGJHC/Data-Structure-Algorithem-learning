@@ -41,3 +41,16 @@ def isValidBST(root):
 
     dfs(root)
     return res
+
+def isValidBST_v2(root):
+    def valid(root, minn, maxx):
+        if not root:
+            return True
+        if minn != None and root.val <= minn:
+            return False
+        if maxx != None and root.val >= maxx:
+            return False
+
+        return valid(root.left, minn, root.val) and valid(root.right, root.val, maxx)
+
+    return valid(root, None, None)
