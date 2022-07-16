@@ -20,4 +20,3 @@ class Solution:
         if s:
             return f"#{s.val}{self.traverse(s.left)}{self.traverse(s.right)}"
         return None
-    
