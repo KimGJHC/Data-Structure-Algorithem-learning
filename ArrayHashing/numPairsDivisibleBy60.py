@@ -8,7 +8,7 @@ Return the number of pairs of songs for which their total duration in seconds is
 """
 import math
 class Solution:
-    def numPairsDivisibleBy60(self, time):
+    def numPairsDivisibleBy60_v1(self, time):
         time_count = {}
         for t in time:
             t = t % 60
@@ -18,6 +18,20 @@ class Solution:
         for t_i in time_count:
             if t_i in (0, 30):
                 res += math.comb(time_count.get(t_i % 60, 0), 2)
-            elif t_i < 6 0 -t_i:
-                res += time_count[t_i] * time_count.get(6 0 -t_i, 0)
+            elif t_i < 60 - t_i:
+                res += time_count[t_i] * time_count.get(60 -t_i, 0)
+        return res
+    # this is 2 pass
+
+    def numPairsDivisibleBy60(self, time):
+        import collections
+        remainder = collections.defaultdict(int)
+        res = 0
+
+        for t in time:
+            if t % 60 == 0:
+                res += remainder[0]
+            else:
+                res += remainder[60-t%60]
+            remainder[t%60] += 1
         return res
