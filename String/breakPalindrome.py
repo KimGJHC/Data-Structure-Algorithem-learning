@@ -7,7 +7,7 @@ Return the resulting string. If there is no way to replace a character to make i
 
 A string a is lexicographically smaller than a string b (of the same length) if in the first position where a and b differ, a has a character strictly smaller than the corresponding character in b. For example, "abcc" is lexicographically smaller than "abcd" because the first position they differ is at the fourth character, and 'c' is smaller than 'd'.
 """
-def breakPalindrome(palindrome):
+def breakPalindrome_v1(palindrome):
     n = len(palindrome)
 
     if n <= 1:
@@ -28,3 +28,20 @@ def breakPalindrome(palindrome):
 
 # time: O(n), n is the size of palindrome
 # space: O(n)
+
+def breakPalindrome(palindrome):
+    n = len(palindrome)
+
+    if n <= 1:
+        return ""
+
+    mid = n // 2
+
+    for i in range(mid):
+        if palindrome[i] > 'a':
+            return palindrome[:i] + 'a' + palindrome[i + 1:]
+
+    return palindrome[:-1] + 'b'
+
+# optimized time by not looking at index after mid
+# asyn time complexity not changed
