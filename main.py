@@ -1,7 +1,5 @@
 from QueueQ.turnstile import test
-import collections
+import math
 
 if __name__ == '__main__':
-    a = [1, 2, 3]
-    a = collections.deque(a)
-    print(a.pop(1))
+    print(math.comb(2, 2))
