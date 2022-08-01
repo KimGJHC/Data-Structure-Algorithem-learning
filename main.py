@@ -1,5 +1,4 @@
-from QueueQ.turnstile import test
-import math
+from TwoPointers.cuttingMetal import maxProfit
 
 if __name__ == '__main__':
-    print("a"*0)
+    print(maxProfit(1, 10, [26, 103 , 59]))
