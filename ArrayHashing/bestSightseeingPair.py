@@ -14,7 +14,7 @@ class Solution:
 
         for j, val in enumerate(values):
             res = max(res, val - j + best_i)
-            best_i = max(best_i, val -j)
+            best_i = max(best_i, val+j)
 
         return res
 
