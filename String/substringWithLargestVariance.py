@@ -23,6 +23,8 @@ def largestVariance(s):
             elif letter == l:
                 hCount -= 1
                 meet_l = True
+            else:
+                continue
 
             if meet_l:
                 hMax = max(hMax, hCount)
