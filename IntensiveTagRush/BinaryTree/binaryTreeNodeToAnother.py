@@ -45,7 +45,7 @@ class Solution:
 
 # solution 1: LCA + DFS
 # time: O(n) where n is the size of the tree
-# Space: O(h) from string concatenation and h is the height of the tree
+# Space: O(n) from string concatenation
 
 
 # solution 2: create graph + BFS
