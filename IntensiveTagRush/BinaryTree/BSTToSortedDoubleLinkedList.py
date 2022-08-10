@@ -52,3 +52,30 @@ class Solution:
 # solution 1: inorder + global link build
 # time: O(n) where n is size of the tree
 # space: O(n)
+
+# inplace solution
+    def treeToDoublyList_v2(self, root):
+        if not root:
+            return None
+
+        first, last = None, None
+
+        def inorder(root):
+            nonlocal last, first
+            if root:
+                inorder(root.left)
+
+                if last:
+                    last.right = root
+                    root.left = last
+                else:
+                    first = root
+                last = root
+
+                inorder(root.right)
+
+        inorder(root)
+        first.left = last
+        last.right = first
+        return first
+# space: O(h) where h is the height of tree
