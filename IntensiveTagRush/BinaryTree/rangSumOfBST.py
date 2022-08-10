@@ -31,3 +31,30 @@ class Solution:
 # solution 1: inorder + truncate during traversal
 # time: O(n)
 # space: O(h)
+
+# You better know how to do inorder traversal with iteration (stack)
+    def rangeSumBST_v2(self, root, low, high):
+
+        res = 0
+        current = root
+        stack = []
+
+        while True:
+            if current:
+                stack.append(current)
+                current = current.left
+            elif stack:
+                current = stack.pop()
+                if current.val >= low and current.val <= high:
+                    res += current.val
+                current = current.right
+            else:
+                break
+        return res
+
+# space: O(h)
+
+
+
+
+        return res
