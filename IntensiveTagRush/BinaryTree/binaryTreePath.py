@@ -34,4 +34,5 @@ class Solution:
 
 # solution: recursion + globle variable. Be careful that do not pass in list pointer in recursion but copy of it, otherwise do backtrack and add + delete
 # time: O(n)
-# space: O(nh)
+# space: O(n): The recursion stack is O(n) in worst case, the no. of path is O(n), the length of path is O(h)
+# space of A = [str()] is len(A)
