@@ -53,3 +53,25 @@ class Solution:
 # solution 1: 2 pass the tree, 1 pass for sum, 1 pass for best product
 # time: O(n)
 # space: O(h)
+
+    def maxProduct_v2(self, root):
+        all_sums = []
+
+        def tree_sum(subroot):
+            nonlocal all_sums
+            if not subroot:
+                return 0
+            left_sum = tree_sum(subroot.left)
+            right_sum = tree_sum(subroot.right)
+            total_sum = left_sum + right_sum + subroot.val
+            all_sums.append(total_sum)
+            return total_sum
+
+        total = tree_sum(root)
+        best = 0
+        for s in all_sums:
+            best = max(best, s * (total - s))
+        return best % (10 ** 9 + 7)
+
+# solution 2: 1 pass solution
+# space: O(n)
