@@ -39,3 +39,28 @@ class Solution:
 # solution 1: iteration and stack
 # time: O(n) where n is len(preorder)
 # space: O(h) where h is the height of BST
+
+    def bstFromPreorder_v2(self, preorder):
+
+        idx = 0
+        n = len(preorder)
+
+        def helper(lower=float("-inf"), upper=float("inf")):
+            nonlocal idx
+
+            if idx == n:
+                return None
+
+            val = preorder[idx]
+
+            if val < lower or val > upper:
+                return None
+
+            idx += 1
+            root = TreeNode(val)
+            root.left = helper(lower, val)
+            root.right = helper(val, upper)
+            return root
+
+        return helper()
+# solution 2: use recursion
