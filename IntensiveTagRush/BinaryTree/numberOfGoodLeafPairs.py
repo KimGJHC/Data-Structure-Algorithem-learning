@@ -41,7 +41,7 @@ class Solution:
                 distanceToLeave = {}
 
                 for key in set(list(left.keys()) + list(right.keys())):
-                    distanceToLeave[key + 1] = left.get(key, 0) + right.get(key, 0)
+                    distanceToLeave[key + 1] = left.get(key, []) + right.get(key, [])
                 return distanceToLeave
 
         postorder(root)

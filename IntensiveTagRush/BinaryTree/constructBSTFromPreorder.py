@@ -52,11 +52,10 @@ class Solution:
                 return None
 
             val = preorder[idx]
-
+            idx += 1
             if val < lower or val > upper:
                 return None
 
-            idx += 1
             root = TreeNode(val)
             root.left = helper(lower, val)
             root.right = helper(val, upper)

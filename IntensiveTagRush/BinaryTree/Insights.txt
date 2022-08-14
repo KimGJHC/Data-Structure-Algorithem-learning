@@ -1,0 +1,55 @@
+Binary Tree, BST all have some common practices, problem solving will usaully involve
+1. bfs
+    - iteration using queue
+    - recursion
+2. dfs
+    - iteration using stack
+    - recursion
+    - preorder
+        useful when we only need information from top
+    - inorder
+        useful when we need sorted order in BST
+    - postorder
+        useful when we need information from bottom
+
+some insights to think about
+1. make tree into graph by adding pointer to parent at each node
+    - All nodes distance K in BT
+2. Use postorder and return information from bottom, use global variable to record
+    - All nodes distance K in BT
+        - return distance to target node,
+        - add another helper function to take care of nodes from other side based on distance to current node
+    - Binary Tree Cameras
+        - return status of subtree (None, not covered, covered, has a camera) and use it to decide current state
+    - Step-By-Step Directions From a Binary Tree Node to Another
+        - Find LCA and dfs starting from LCA, keep track of path to start and end values
+3. Construct large tree from smaller trees
+    - All Possible Full Binary Trees
+        - use a cache to store built tree
+        - create larger tree at newly created root with left and right children of smaller tree
+4. LCA question
+    - solve by recursion
+5. tracking all paths
+    - solve by backtrack
+6. Conversion problem: Tree to double linked list
+    - Convert Binary Search Tree to Sorted Doubly Linked List
+        - linked list needs a head and tail
+7. completeness of BT
+    - Check Completeness of a Binary Tree
+        - view the tree as a list reading from left to right, top to bottom using bfs
+        - a complete BT can only read a None at bottom
+8. BST
+    - Closest Binary Search Tree Value
+        - use inorder and we need to utilize property of BST
+    - Closest Binary Search Tree Value II
+        - Note that the closest values are consecutive
+9. Sting traversal
+    - stack for node store
+10. Preorder + Postorder for constructing tree
+11. preorder to construct BST
+    - recursion + globle index + value range
+12. Distribute Coins in Binary Tree
+    - for distribute objects, we think about move on node in total
+13. LCA 3:
+    - think about tree as cycle linked list
+

@@ -49,11 +49,10 @@ class Codec:
                 return None
 
             val = preorder[idx]
-
+            idx += 1
             if val > upper or val < lower:
                 return None
 
-            idx += 1
             node = TreeNode(val)
             node.left = helper(lower, val)
             node.right = helper(val, upper)
