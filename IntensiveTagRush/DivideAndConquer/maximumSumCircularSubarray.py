@@ -9,4 +9,30 @@ A subarray may only include each element of the fixed buffer nums at most once. 
 """
 
 
+class Solution:
+    def maxSubarraySumCircular(self, nums):
+
+        # O(n)
+        total = sum(nums)
+        # use kdadane for geting max and min sum of subarray
+
+        # O(n)
+        maxi = float('-inf')
+        current = 0
+        for num in nums:
+            current = num + max(current, 0)
+            maxi = max(maxi, current)
+
+        # O(n)
+        mini = float('inf')
+        current = 0
+        for num in nums:
+            current = num + min(current, 0)
+            mini = min(mini, current)
+
+        return max(maxi, total - mini if total != mini else float('-inf'))
+# use Kadane for calculating max sum and min sum of substrings
+# time: O(n)
+# space: O(1)
+
 
