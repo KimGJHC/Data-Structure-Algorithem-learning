@@ -48,7 +48,7 @@ class Solution:
                     j = k
         return count
 
-# solution 1: fix i and count j, k
+# solution 1: fix i and count j, k, using 2 pointers on sorted array
 # time: O(n**2)
 # space: O(1)
 
