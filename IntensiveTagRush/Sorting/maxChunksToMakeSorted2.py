@@ -21,3 +21,22 @@ class Solution:
         return res
 # time: O(n**2logn) for worst case where n = len(arr)
 # space: O(n)
+
+
+    def maxChunksToSorted_v2(self, arr):
+        stack = []
+        stack.append(arr[0])
+
+        for i in range(1, len(arr)):
+            if arr[i] >= stack[-1]:
+                stack.append(arr[i])
+                continue
+            temp = stack[-1]
+            while stack and arr[i] < stack[-1]:
+                stack.pop()
+            stack.append(temp)
+        return len(stack)
+
+# solution 2: stack to keep track of the upper of each chunk and merge if lower bound meets previous upper bound
+# time: O(n)
+# space: O(n)
