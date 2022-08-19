@@ -1,5 +1,7 @@
-import math
+import heapq
 
 if __name__ == '__main__':
-    print(math.degrees(math.atan(-1/math.sqrt(3))))
+    a = [1, 3,4, 5,2,3,4]
+    heapq.heapify(a)
+    print(a[-3:])
 
