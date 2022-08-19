@@ -28,3 +28,19 @@ class Solution:
         return res
 # time: O(n)
 # space: O(1) if we do not count space for res
+
+    def sortedSquares_v2(self, nums):
+        n = len(nums)
+        result = [0] * n
+        left = 0
+        right = n - 1
+        for i in range(n - 1, -1, -1):
+            if abs(nums[left]) < abs(nums[right]):
+                square = nums[right]
+                right -= 1
+            else:
+                square = nums[left]
+                left += 1
+            result[i] = square * square
+        return result
+# solution 2: no need for bisect for 0
