@@ -1,5 +1,5 @@
-import heapq
+import math
 
 if __name__ == '__main__':
-    print(list(zip([1,2,3], [3,2,1], [1,3,5])))
+    print(math.degrees(math.atan(-1/math.sqrt(3))))
 
