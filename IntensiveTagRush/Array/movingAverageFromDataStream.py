@@ -24,4 +24,3 @@ class MovingAverage:
             self.total -= self.queue.popleft()
             self.len -= 1
         return self.total / self.len
-    
