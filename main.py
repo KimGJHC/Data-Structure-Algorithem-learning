@@ -1,5 +1,6 @@
-import heapq
+import bisect
 
 if __name__ == '__main__':
-    print(bin((1 << 5) -1))
+    a = [5, 6, 7]
+    print(bisect.bisect_left(a, 5))
 
