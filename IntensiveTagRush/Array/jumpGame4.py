@@ -27,7 +27,7 @@ class Solution:
             while heap[0][1] < i - k:
                 heapq.heappop(heap)
 
-            dp[i] = nums[i] + dp[heap[0][1]]
+            dp[i] = nums[i] - heap[0][0]
             heapq.heappush(heap, (-dp[i], i))
 
         return dp[-1]
