@@ -48,4 +48,4 @@ class Solution:
         return res
 
 # time: O(n)
-# space: O(n)
+# space: O(k)
