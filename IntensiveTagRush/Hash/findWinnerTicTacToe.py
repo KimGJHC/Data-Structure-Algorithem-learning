@@ -63,3 +63,6 @@ class Solution:
             return "Draw"
         else:
             return "Pending"
+
+# time: O(m) where m = len(moves) / O(1)
+# space: O(n) n = 3
