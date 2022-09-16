@@ -6,6 +6,7 @@ Return the max sliding window.
 """
 
 import heapq
+from collections import deque
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
         n = len(nums)
@@ -23,5 +24,37 @@ class Solution:
                 heapq.heappop(maxheap)
             res.append(-maxheap[0][0])
         return res
+
+# solution 1: heap
 # time: O(nlogn)
+# space: O(n)
+
+        def maxSlidingWindow_v2(self, nums: List[int], k: int) -> List[int]:
+            n = len(nums)
+            if n * k == 0:
+                return []
+            if k == 1:
+                return nums
+
+            queue = deque()
+
+            for i in range(k):
+                if queue and queue[0] == i - k:
+                    queue.popleft()
+                while queue and nums[queue[-1]] <= nums[i]:
+                    queue.pop()
+                queue.append(i)
+
+            res = [nums[queue[0]]]
+
+            for i in range(k, n):
+                if queue and queue[0] == i - k:
+                    queue.popleft()
+                while queue and nums[queue[-1]] <= nums[i]:
+                    queue.pop()
+                queue.append(i)
+                res.append(nums[queue[0]])
+            return res
+# solution 2: decreasing deque
+# time: O(n)
 # space: O(n)
