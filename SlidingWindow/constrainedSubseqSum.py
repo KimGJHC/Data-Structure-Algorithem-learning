@@ -5,6 +5,7 @@ Given an integer array nums and an integer k, return the maximum sum of a non-em
 A subsequence of an array is obtained by deleting some number of elements (can be zero) from the array, leaving the remaining elements in their original order.
 """
 
+from collections import deque
 class Solution:
     def constrainedSubsetSum(self, nums: List[int], k: int) -> int:
         queue = deque()
