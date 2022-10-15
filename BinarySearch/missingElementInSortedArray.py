@@ -8,7 +8,7 @@ class Solution:
         n = len(nums)
         l, r = 0, n - 1
 
-        # find the largest num in nums less than k-1 missing elements
+        # find the largest num in nums less than k missing elements
 
         while l <= r:
             mid = (l + r) // 2
