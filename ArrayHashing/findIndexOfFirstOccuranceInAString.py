@@ -4,6 +4,7 @@ Given two strings needle and haystack, return the index of the first occurrence 
 
 # 1. rolling hash
 # 2. iterate through potential first index of needle in haystack
+# 3. KMP
 """
 
 
@@ -45,3 +46,37 @@ class Solution:
 
     def get_index(self, char):
         return ord(char) - ord('a') + 1
+
+    def strStr_KMP(self, haystack: str, needle: str) -> int:
+        n_h = len(haystack)
+        n_n = len(needle)
+
+        LPS = [0] * n_n
+
+        prevLPS, i = 0, 1
+
+        while i < n_n:
+            if needle[prevLPS] == needle[i]:
+                LPS[i] = prevLPS + 1
+                prevLPS = LPS[i]
+                i += 1
+            elif prevLPS == 0:
+                LPS[i] = 0
+                i += 1
+            else:
+                prevLPS = LPS[prevLPS - 1]
+
+        i, j = 0, 0
+
+        while i < n_h:
+            if haystack[i] == needle[j]:
+                i += 1
+                j += 1
+            else:
+                if j == 0:
+                    i += 1
+                else:
+                    j = LPS[j - 1]
+            if j == n_n:
+                return i - n_n
+        return -1
