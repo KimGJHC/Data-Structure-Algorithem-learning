@@ -1,7 +1,5 @@
-from NamedAlgorithm.RabinKarp import rabinKarp
+from WeeklyContests.contest317.averageEvenNumber import test
 
 if __name__ == '__main__':
-    s = 'abcabcabc'
-    t = 'abc'
-    print(rabinKarp(s, t))
+    test()
 
