@@ -5,7 +5,6 @@ Given string s and pattern p, find all p in s, return list of starting index
 
 class Solution:
     def longestPrefixSuffix(self, p):
-        # longestPrefixSuffix
         lps = [0] * len(p)
         i = 1
         j = 0
@@ -21,20 +20,22 @@ class Solution:
                 i += 1
         return lps
 
-    def findPatterns(self, s, p):
-        n_p = len(p)
-        n_s = len(s)
 
-        j = 0 # index on pattern
-        i = 0 # index on s
-        lps = self.longestPrefixSuffix(p)
+    def findPatterns(self, s, p):
+        n_s = len(s)
+        n_p = len(p)
+
         res = []
+        i, j = 0, 0
+        lps = self.longestPrefixSuffix(p)
+
         while n_s - i >= n_p - j:
-            if p[j] == s[i]:
-                j += 1
+            if s[i] == p[j]:
                 i += 1
+                j += 1
+
             if j == n_p:
-                res.append(i-j)
+                res.append(i - j)
                 j = lps[j-1]
             elif i < n_s and p[j] != s[i]:
                 if j != 0:
@@ -42,3 +43,5 @@ class Solution:
                 else:
                     i += 1
         return res
+
+
