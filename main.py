@@ -1,9 +1,6 @@
-from NamedAlgorithm.KMP import Solution
+from NamedAlgorithm.segmentTree import testSegmentTree
 
 if __name__ == '__main__':
-    solution = Solution()
-    p = 'aba'
-    s = 'abababbababc'
-    res = solution.findPatterns(s, p)
-    print(res)
+    testSegmentTree()
+
 
