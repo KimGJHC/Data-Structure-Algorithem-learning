@@ -58,6 +58,7 @@ class SkipList:
             for i in range(update_level+1):
                 node.forward[i] = update[i].forward[i]
                 update[i].forward[i] = node
+
     def deleteKey(self, key):
         update = [None] * (self.MAXLEVEL+1)
         current = self.head
