@@ -19,4 +19,4 @@ class Solution:
             res += num
             res %= MOD
 
-        return res 
+        return res
