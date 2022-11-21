@@ -14,7 +14,23 @@ Return the maximum number of consecutive 'T's or 'F's in the answer key after pe
 
 
 class Solution:
-    def maxConsecutiveAnswers(self, answerKey: str, k: int) -> int:
+    def maxConsecutiveAnswers_v1(self, answerKey: str, k: int) -> int:
+        l = 0
+        memo = {'T': 0, 'F': 0}
+
+        res = 0
+
+        for r, ans in enumerate(list(answerKey)):
+            memo[ans] += 1
+
+            # r - l + 1 is number of ans between l and r
+            while min(memo.values()) > k:
+                memo[answerKey[l]] -= 1
+                l += 1
+            res = max(res, r - l + 1)
+        return res
+
+    def maxConsecutiveAnswers_v2(self, answerKey: str, k: int) -> int:
         l = 0
         memo = {'T': 0, 'F': 0}
 
