@@ -19,6 +19,10 @@ class Fenwick:
         i += 1
         while i <= self.n:
             self.arr[i] += val
+            # flip the right most 1-bit of i
+            # i = 2 ** p + 2 ** (p-1) + ... + 2 ** 1 + 2 ** 0
+            # sons of i in the BITree
+            # -i is flip all bits and add 1
             i += i & -i
 
     def prefix_sum(self, i):
@@ -26,5 +30,6 @@ class Fenwick:
         i += 1
         while i > 0:
             res += self.arr[i]
+            # parent of i in the BITree
             i -= i & (-i)
         return res
