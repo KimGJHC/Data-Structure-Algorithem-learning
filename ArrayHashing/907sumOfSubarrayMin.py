@@ -39,6 +39,29 @@ def sumSubarrayMins(arr):
 # time: O(n)
 # space: O(n)
 
+class Solution:
+    def sumSubarrayMins(self, arr: List[int]) -> int:
+        MOD = 10 ** 9 + 7
+        res = 0
+        stack = []
+
+        for i, num in enumerate(arr):
+            while stack and arr[stack[-1]] >= num:
+                idx = stack.pop()
+                l = stack[-1] if stack else -1
+                r = i
+                res += (idx - l) * (r - idx) * arr[idx]
+                res %= MOD
+            stack.append(i)
+
+        while stack:
+            idx = stack.pop()
+            l = stack[-1] if stack else -1
+            r = len(arr)
+            res += (idx - l) * (r - idx) * arr[idx]
+            res %= MOD
+        return res
+
 def test():
     arr = [3,1,2,4]
     # assert sumSubarrayMins(arr) == 17

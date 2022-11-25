@@ -39,4 +39,4 @@ class Solution:
                 for k in range(j + 1, n):
                     if validTriplet(keys[i], keys[j], keys[k]):
                         res += count[keys[i]] * count[keys[j]] * count[keys[k]]
-        return res * 6 
+        return res * 6
